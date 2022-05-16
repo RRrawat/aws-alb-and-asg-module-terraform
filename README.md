@@ -11,3 +11,9 @@ There are two EC2 instances, which are in private subnets and the Application Lo
 ALB is coupled with Auto Scaling
 There is one Target Group connecting both the EC2 instances
 EC2 Apache installation happens with AWS SSM
+
+You can do a quick check to see whether the example works now.
+
+Select ALB -> Click Description Tab -> Click the Description tab -> Copy (Ctrl +C) the DNS name (e.g. myALB-1767835550.us-east-1.elb.amazonaws.com)
+
+Paste the DNS name on a web browser and see all ok.
