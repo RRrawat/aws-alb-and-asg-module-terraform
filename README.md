@@ -2,8 +2,6 @@
 
 In this post, I am going bit further to explain the same scenario by having an Application Load Balancer (ALB) with Auto Scaling feature. Though this is a pretty straight forward scenario, having a production level setup 
 
-![test1](https://user-images.githubusercontent.com/81628422/168591563-28541311-a728-4886-b077-ad142dba8efb.jpg)
-
 deployment architecture.
 
 A Custom VPC with two Availability Zones for High Availability
