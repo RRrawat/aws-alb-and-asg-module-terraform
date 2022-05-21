@@ -3,6 +3,7 @@ vpc_id = "vpc-085##################"
 create_lc = true
 instance_type = "t2.micro"
 key_name = "#########"
+
 ingress = {
       "22" = {
           port = 22
