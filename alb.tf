@@ -103,3 +103,5 @@ resource "aws_lb_listener_certificate" "https_sni" {
   listener_arn    = join("", aws_alb_listener.listener_https.*.arn)
   certificate_arn = var.additional_certs[count.index]
 }
+
+  
