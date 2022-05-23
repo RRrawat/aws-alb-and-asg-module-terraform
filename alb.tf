@@ -53,6 +53,7 @@ resource "aws_alb_target_group" "group" {
   target_type          = var.target_group_target_type
   deregistration_delay = var.deregistration_delay
   
+  
   # Alter the destination of the health check to be the login page.
   health_check {
     protocol            = var.target_group_protocol
