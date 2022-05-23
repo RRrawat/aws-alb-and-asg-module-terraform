@@ -96,6 +96,8 @@ resource "aws_alb_listener" "listener_https" {
     type             = "forward"
   }
 }
+  
+  
 resource "aws_lb_listener_certificate" "https_sni" {
   count = var.https_enabled  ? 1 : 0
   listener_arn    = join("", aws_alb_listener.listener_https.*.arn)
