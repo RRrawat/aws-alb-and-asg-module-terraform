@@ -1,7 +1,9 @@
 region        = "us-east-1"
 vpc_id = "vpc-085##################"
 create_lc = true
+
 instance_type = "t2.micro"
+
 key_name = "#########"
 
 ingress = {
@@ -30,8 +32,9 @@ ingress = {
 
 
 #autoscaling group 
+
 create_asg = true 
-min_size = 0
+min_size = 1
 max_size = 5
 desired_capacity = 3
 wait_for_capacity_timeout = 0
