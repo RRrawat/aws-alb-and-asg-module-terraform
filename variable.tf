@@ -263,6 +263,11 @@ variable "idle_timeout" {
   description = "The time in seconds that the connection is allowed to be idle"
 }
 
+variable "alb_sg_name" {
+  type = string
+  default = "terraform_alb_security_group"
+}
+
 variable "ip_address_type" {
   type        = string
   default     = "ipv4"
