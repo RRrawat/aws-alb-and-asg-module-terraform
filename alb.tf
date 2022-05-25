@@ -1,6 +1,6 @@
 resource "aws_security_group" "alb" {
-  name        = "terraform_alb_security_group"
-  description = "Terraform load balancer security group"
+  name        = var.alb_sg_name 
+  description = var.alb_sg_description
   vpc_id      = var.vpc_id
   dynamic "ingress" {
     for_each = var.ingress_alb
@@ -27,11 +27,11 @@ resource "aws_security_group" "alb" {
 *************************************/
 
 resource "aws_alb" "alb" {
-  name            = "Dev-alb"
+  name            = var.alb_name 
   security_groups = ["${aws_security_group.alb.id}"]
   subnets         = data.aws_subnet_ids.subnets.ids
   internal           = var.internal
-  load_balancer_type = "application"
+  load_balancer_type = var.load_balancer_type
 
   enable_cross_zone_load_balancing = var.cross_zone_load_balancing_enabled
   enable_http2                     = var.http2_enabled
@@ -45,10 +45,10 @@ resource "aws_alb" "alb" {
 }
 
 resource "aws_alb_target_group" "group" {
-  name     = "Dev-alb-target"
-  port     = 8080
-  protocol = "HTTP"
-  protocol_version = "HTTP1"
+  name     = var.alb_target_name
+  port     = var.alb_target_port
+  protocol =  var.alb_target_protocol
+  protocol_version = var.alb_target_protocol_version
   vpc_id   = var.vpc_id
   target_type          = var.target_group_target_type
   deregistration_delay = var.deregistration_delay
