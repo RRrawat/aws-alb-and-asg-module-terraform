@@ -384,3 +384,9 @@ variable "alb_target_port" {
   default = "8080"
   description = " Port on which targets receive traffic, unless overridden when registering a specific target. Required when target_type is instance, ip or alb. Does not apply when target_type is lambda."
 }
+
+variable "alb_target_protocol_version"{
+  type        = string
+  default     = "HTTP1"
+  description = "Only applicable when protocol is HTTP or HTTPS. The protocol version. Specify GRPC to send requests to targets using gRPC. Specify HTTP2 to send requests to targets using HTTP/2. The default is HTTP1, which sends requests to targets using HTTP/1.1"
+}
