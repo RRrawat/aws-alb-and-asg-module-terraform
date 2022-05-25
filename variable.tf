@@ -368,3 +368,8 @@ variable "alb_name"{
   default = "Dev-alb"
   description = "name of the alb"
 }
+
+variable "load_balancer_type"{
+  type = string
+  default = "application"
+}
