@@ -379,3 +379,8 @@ variable "alb_target_name"{
   default = "Dev-alb-target"
 }
 
+variable "alb_target_port" {
+  type = string
+  default = "8080"
+  description = " Port on which targets receive traffic, unless overridden when registering a specific target. Required when target_type is instance, ip or alb. Does not apply when target_type is lambda."
+}
