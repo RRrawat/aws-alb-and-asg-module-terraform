@@ -390,3 +390,9 @@ variable "alb_target_protocol_version"{
   default     = "HTTP1"
   description = "Only applicable when protocol is HTTP or HTTPS. The protocol version. Specify GRPC to send requests to targets using gRPC. Specify HTTP2 to send requests to targets using HTTP/2. The default is HTTP1, which sends requests to targets using HTTP/1.1"
 }
+
+variable "alb_target_protocol"{
+  type = string
+  default = "HTTP"
+  description = "Protocol to use for routing traffic to the targets. Should be one of GENEVE, HTTP, HTTPS, TCP, TCP_UDP, TLS, or UDP. Required when target_type is instance, ip or alb. Does not apply when target_type is lambda."
+}
