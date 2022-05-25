@@ -1,3 +1,7 @@
+/**********************************************************
+  ** Security Group for ALB
+  *************************************************************/
+      
 resource "aws_security_group" "alb" {
   name        = var.alb_sg_name 
   description = var.alb_sg_description
