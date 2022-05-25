@@ -353,6 +353,11 @@ variable "additional_certs" {
   description = "A list of additonal certs to add to the https listerner"
   default     = []
 }
+
+variable "alb_sg_description" {
+  type = string
+  default = "Terraform load balancer security group"
+}
 variable "https_enabled" {
   type        = bool
   default     = false
