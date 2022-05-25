@@ -363,3 +363,8 @@ variable "https_enabled" {
   default     = false
   description = "A boolean flag to enable/disable HTTPS listener"
 }
+variable "alb_name"{
+  type = string
+  default = "Dev-alb"
+  description = "name of the alb"
+}
