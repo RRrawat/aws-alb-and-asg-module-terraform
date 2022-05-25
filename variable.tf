@@ -373,3 +373,9 @@ variable "load_balancer_type"{
   type = string
   default = "application"
 }
+
+variable "alb_target_name"{
+  type = string
+  default = "Dev-alb-target"
+}
+
