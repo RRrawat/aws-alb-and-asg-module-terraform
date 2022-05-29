@@ -1,5 +1,6 @@
 module "alb_with_asg" {
   source = "../"
+  
   region = var.region
   vpc_id = var.vpc_id 
   create_lc = var.create_lc
