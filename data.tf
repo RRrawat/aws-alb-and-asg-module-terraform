@@ -1,6 +1,5 @@
 data "aws_availability_zones" "all" {}
 
-
 data "aws_ami" "amazon-linux" {
   most_recent = true
 
