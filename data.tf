@@ -1,5 +1,6 @@
 data "aws_availability_zones" "all" {}
 
+
 data "aws_ami" "amazon-linux" {
   most_recent = true
 
@@ -16,6 +17,7 @@ data "aws_ami" "amazon-linux" {
     ]
   }
 }
+
 
 data "aws_vpc" "vpc" {
   id = var.vpc_id
