@@ -25,6 +25,9 @@ data "aws_ami" "amazon-linux" {
 data "aws_vpc" "vpc" {
   id = var.vpc_id
 }
+
+# Amazon subnet ids inside vpc 
+
 data "aws_subnet_ids" "subnets" {
   vpc_id = data.aws_vpc.vpc.id
 }
