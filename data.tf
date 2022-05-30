@@ -1,3 +1,5 @@
+#Amazon Availability zone 
+
 data "aws_availability_zones" "all" {}
 
 #Amazon Linux AMI
