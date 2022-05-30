@@ -77,8 +77,7 @@ resource "aws_alb_target_group" "group" {
   tags = module.tags.commontags
 }
 
-
-
+ 
 resource "aws_alb_listener" "listener_http" {
   load_balancer_arn = aws_alb.alb.arn
   port              = "80"
@@ -90,6 +89,7 @@ resource "aws_alb_listener" "listener_http" {
   }
 }
 
+ 
 resource "aws_alb_listener" "listener_https" {
   count = var.https_enabled  ? 1 : 0
   load_balancer_arn = "${aws_alb.alb.arn}"
@@ -109,5 +109,3 @@ resource "aws_lb_listener_certificate" "https_sni" {
   listener_arn    = join("", aws_alb_listener.listener_https.*.arn)
   certificate_arn = var.additional_certs[count.index]
 }
-
-  
