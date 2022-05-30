@@ -26,6 +26,7 @@ resource "aws_security_group" "alb" {
 
   
 }
+ 
 /*************************************
 * Application load balancer
 *************************************/
