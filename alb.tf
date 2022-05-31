@@ -1,6 +1,6 @@
-/**********************************************************
-  ** Security Group for ALB
-  *************************************************************/
+/**************************************************************
+# Security Group for ALB
+****************************************************************/
       
 resource "aws_security_group" "alb" {
   name        = var.alb_sg_name 
@@ -28,7 +28,7 @@ resource "aws_security_group" "alb" {
 }
  
 /*************************************
-* Application load balancer
+# Application load balancer
 *************************************/
 
 resource "aws_alb" "alb" {
