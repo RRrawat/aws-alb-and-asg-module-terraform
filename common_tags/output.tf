@@ -4,5 +4,4 @@ output "commontags" {
     },
 	var.additional_tags,
 	)
-
 }
