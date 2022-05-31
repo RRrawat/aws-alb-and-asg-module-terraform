@@ -1,5 +1,5 @@
 /*****************************************************************************************
-* Security group for EC2
+# Security group for EC2
 ******************************************************************************************/ 
 
 resource "aws_security_group" "security_group" {
@@ -28,7 +28,7 @@ resource "aws_security_group" "security_group" {
 }
 
 /*****************************************************************************************
- EC2 lanch Configuration 
+# EC2 lanch Configuration 
 ******************************************************************************************/
 
 resource "aws_launch_configuration" "asg-launch-config" {
@@ -73,7 +73,7 @@ resource "aws_launch_configuration" "asg-launch-config" {
 
 
 /*****************************************************************************************
-* EC2 autoscaling group 
+# EC2 autoscaling group 
 ******************************************************************************************/
 
 resource "aws_autoscaling_group" "asg-sample" {
