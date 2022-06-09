@@ -6,7 +6,6 @@ resource "aws_security_group" "security_group" {
   name        = "EC2_security_group"
   description = "Terraform load balancer security group"
   vpc_id      = var.vpc_id
-
   
   dynamic "ingress" {
     for_each = var.ingress
@@ -57,6 +56,7 @@ resource "aws_launch_configuration" "asg-launch-config" {
       volume_type           = lookup(ebs_block_device.value, "volume_type", null)
     }
   }
+  
   dynamic "root_block_device" {
     for_each = var.root_block_device
     content {
