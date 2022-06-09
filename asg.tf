@@ -93,7 +93,6 @@ resource "aws_autoscaling_group" "asg-sample" {
   wait_for_capacity_timeout = var.wait_for_capacity_timeout
   default_cooldown          = var.default_cooldown
   protect_from_scale_in     = var.protect_from_scale_in
-
   target_group_arns         = ["${aws_alb_target_group.group.arn}"]
   health_check_type         = var.health_check_type
   health_check_grace_period = var.health_check_grace_period
