@@ -7,6 +7,7 @@ resource "aws_security_group" "security_group" {
   description = "Terraform load balancer security group"
   vpc_id      = var.vpc_id
 
+  
   dynamic "ingress" {
     for_each = var.ingress
     content {
@@ -16,6 +17,7 @@ resource "aws_security_group" "security_group" {
       cidr_blocks = ingress.value.cidr_blocks
     }
   }
+  
   
   # Allow all outbound traffic.
   egress {
