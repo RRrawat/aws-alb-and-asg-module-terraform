@@ -3,8 +3,8 @@
 data "aws_availability_zones" "all" {
 }
 
-#Amazon Linux AMI
 
+#Amazon Linux AMI
 data "aws_ami" "amazon-linux" {
   most_recent = true
 
@@ -22,18 +22,19 @@ data "aws_ami" "amazon-linux" {
   }
 }
 
-
+#AWS VPC
 data "aws_vpc" "vpc" {
   id = var.vpc_id
 }
 
-# Amazon subnet ids inside vpc 
 
+# Amazon subnet ids inside vpc 
 data "aws_subnet_ids" "subnets" {
   vpc_id = data.aws_vpc.vpc.id
 }
 
 
+#tags modules
 module "tags" {
   source = "./common_tags"
 
