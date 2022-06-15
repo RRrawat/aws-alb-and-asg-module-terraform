@@ -1,5 +1,4 @@
 #Amazon Availability zone 
-
 data "aws_availability_zones" "all" {
 }
 
@@ -39,6 +38,5 @@ module "tags" {
   source = "./common_tags"
 
   enviroment = var.enviroment
-  additional_tags = var.additional_tags
-  
+  additional_tags = var.additional_tags 
 }
