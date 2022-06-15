@@ -1,7 +1,6 @@
 /*****************************************************************************************
 # Security group for EC2
 ******************************************************************************************/ 
-
 resource "aws_security_group" "security_group" {
   name        = "EC2_security_group"
   description = "Terraform load balancer security group"
@@ -31,7 +30,6 @@ resource "aws_security_group" "security_group" {
 /*****************************************************************************************
 # EC2 lanch Configuration 
 ******************************************************************************************/
-
 resource "aws_launch_configuration" "asg-launch-config" {
   count = var.create_lc ? 1 : 0
   name = var.lc_name
@@ -77,7 +75,6 @@ resource "aws_launch_configuration" "asg-launch-config" {
 /*****************************************************************************************
 # EC2 autoscaling group 
 ******************************************************************************************/
-
 resource "aws_autoscaling_group" "asg-sample" {
   count = var.create_asg ? 1 : 0
   name        = var.asg_name
