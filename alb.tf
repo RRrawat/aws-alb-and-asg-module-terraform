@@ -1,9 +1,6 @@
 /**************************************************************
 # Security Group for ALB
-****************************************************************/
-
-
-      
+****************************************************************/      
 resource "aws_security_group" "alb" {
   name        = var.alb_sg_name 
   description = var.alb_sg_description
@@ -25,21 +22,17 @@ resource "aws_security_group" "alb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = module.tags.commontags
-
-  
 }
  
 /*************************************
 # Application load balancer
 *************************************/
-
 resource "aws_alb" "alb" {
   name            = var.alb_name 
   security_groups = ["${aws_security_group.alb.id}"]
   subnets         = data.aws_subnet_ids.subnets.ids
   internal           = var.internal
   load_balancer_type = var.load_balancer_type
-
   enable_cross_zone_load_balancing = var.cross_zone_load_balancing_enabled
   enable_http2                     = var.http2_enabled
   idle_timeout                     = var.idle_timeout
@@ -59,8 +52,7 @@ resource "aws_alb_target_group" "group" {
   vpc_id   = var.vpc_id
   target_type          = var.target_group_target_type
   deregistration_delay = var.deregistration_delay
-  
-  
+      
   # Alter the destination of the health check to be the login page.
   health_check {
     protocol            = var.target_group_protocol
