@@ -75,7 +75,7 @@ resource "aws_alb_target_group" "group" {
 resource "aws_alb_listener" "listener_http" {
   load_balancer_arn = aws_alb.alb.arn
   port              = var.aws_alb_listener_http_port
-  protocol          = "HTTP"
+  protocol          = var.listener_http_protocol
 
   default_action {
     target_group_arn = aws_alb_target_group.group.arn
