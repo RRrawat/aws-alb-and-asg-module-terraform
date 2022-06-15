@@ -3,7 +3,6 @@ variable "enviroment" {
 	description	= "Provide environment (DEV/TEST/PRD)"
 }
 
-
 variable "additional_tags"{
 	type = map(string)
 	default = null
