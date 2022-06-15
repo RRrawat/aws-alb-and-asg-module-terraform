@@ -404,3 +404,9 @@ variable "aws_alb_listener_http_port"{
   description = "Port on which the load balancer is listening. Not valid for Gateway Load Balancers."
 }
 
+variable "listener_http_protocol"{
+  type = string
+  default = "HTTP" 
+  description = "Protocol for connections from clients to the load balancer. For Application Load Balancers, valid values are HTTP and HTTPS, with a default of HTTP"
+}
+
