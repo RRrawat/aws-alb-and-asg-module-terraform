@@ -12,6 +12,7 @@ variable "vpc_id" {
 #****************************************
 # Common tags
 #************************************
+
 variable "enviroment" {
   type        = string
   description = "Provide environment (DEV/TEST/PRD)"
@@ -396,3 +397,10 @@ variable "alb_target_protocol"{
   default = "HTTP"
   description = "Protocol to use for routing traffic to the targets. Should be one of GENEVE, HTTP, HTTPS, TCP, TCP_UDP, TLS, or UDP. Required when target_type is instance, ip or alb. Does not apply when target_type is lambda."
 }
+
+variable "aws_alb_listener_http_port"{
+  type = string
+  default = "80"
+  description = "Port on which the load balancer is listening. Not valid for Gateway Load Balancers."
+}
+
