@@ -16,4 +16,5 @@ You can do a quick check to see whether the example works now.
 
 Select ALB -> Click Description Tab -> Click the Description tab -> Copy (Ctrl +C) the DNS name (e.g. myALB-1767835550.us-east-1.elb.amazonaws.com)
 
+
 Paste the DNS name on a web browser and see all ok.
